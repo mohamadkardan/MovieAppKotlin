@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="trend"
+            type="com.example.movieappwithkotlin.model.Trend" />
+
+        <variable
+            name="viewModel"
+            type="com.example.movieappwithkotlin.viewmodel.HomeViewModel" />
+
+    </data>
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:layout_width="250dp"
+        android:layout_height="320dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:elevation="8dp"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:imageUrl="@{trend.posterPath}"
+        android:onClick="@{(v)->viewModel.onClickTrendItems(v,trend)}"
+        app:riv_corner_radius="16dp" />
+
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="8dp"-->
+    <!--        android:layout_marginBottom="8dp"-->
+    <!--        android:foreground="?android:attr/selectableItemBackground"-->
+    <!--        android:onClick="@{() -> viewModel.onClickItem()}"-->
+    <!--        android:orientation="horizontal">-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/imageviewPosterItemRecyclerview"-->
+    <!--            android:layout_width="80dp"-->
+    <!--            android:layout_height="80dp"-->
+    <!--            android:layout_marginLeft="16dp"-->
+    <!--            android:scaleType="centerCrop"-->
+    <!--            app:imageUrl="@{movie.poster_path}" />-->
+
+    <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:orientation="vertical">-->
+
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/textviewTitleItemRecyclerview"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:ellipsize="end"-->
+    <!--                android:fontFamily="sans-serif-smallcaps"-->
+    <!--                android:lines="1"-->
+    <!--                android:paddingLeft="8dp"-->
+    <!--                android:paddingRight="16dp"-->
+    <!--                android:text="@{movie.original_title,default=title}"-->
+    <!--                android:textColor="@color/black"-->
+    <!--                android:textSize="20sp"-->
+    <!--                android:textStyle="bold"-->
+    <!--                app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/textviewLanguageItemRecyclerview"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="8dp"-->
+    <!--                android:paddingLeft="8dp"-->
+    <!--                android:text="@{movie.original_language,default=language}"-->
+    <!--                android:textSize="17sp"-->
+    <!--                app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--                app:layout_constraintTop_toBottomOf="@id/textviewTitleItemRecyclerview" />-->
+
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/textviewMoreItemRecyclerview"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginRight="16dp"-->
+    <!--                android:clickable="true"-->
+    <!--                android:focusable="true"-->
+    <!--                android:onClick="@{() -> viewModel.onClickItem()}"-->
+    <!--                android:text="More"-->
+    <!--                android:textColor="@color/purple_500"-->
+    <!--                android:textSize="17sp"-->
+    <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                app:layout_constraintRight_toRightOf="parent" />-->
+
+    <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <!--    </LinearLayout>-->
+
+</layout>
